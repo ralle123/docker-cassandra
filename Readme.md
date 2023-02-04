@@ -10,7 +10,7 @@ create keyspace CityInfo with replication = {'class' : 'SimpleStrategy', 'replic
 
 ## declare what db you will use
 use CityInfo;
-
+```
 CREATE TABLE cities (
  id int,
  name text,
@@ -34,7 +34,7 @@ INSERT INTO cities(id,name,country) VALUES (5,'Buffalo','USA');
 INSERT INTO users(username,name,age) VALUES ('rs34','Raul Samayoa',34);
 INSERT INTO users(username,name,age) VALUES ('jr23','Jack Ryan',23);
 INSERT INTO users(username,name,age) VALUES ('pl34','Penny Loafer',34);
-
+```
 ## find ip for cassandra container to connect to it
 docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_name_or_id
 
