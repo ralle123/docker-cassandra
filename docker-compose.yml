@@ -1,0 +1,18 @@
+version: '3.13'
+services:
+  my_cassandra:
+    image: cassandra:latest
+    container_name: cas1
+    ports:
+      - 9042:9042
+    volumes:
+      - ./data:/var/lib/cassandra/data
+  jupyter:
+      container_name: jhub
+      build:
+        context: .
+        dockerfile: Dockerfile
+      ports:
+        - 8888:8888
+      volumes:
+        - ./notebooks:/home/jovyan/work
